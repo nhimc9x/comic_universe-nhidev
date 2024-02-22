@@ -3,7 +3,9 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl">hello</h1>
+      <div className="">
+        <div className="text-cmu-primary">ccc</div>
+      </div>
     </>
   )
 }
