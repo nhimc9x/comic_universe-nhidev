@@ -1,10 +1,15 @@
-import SubHead from '../../components/SubHead/SubHead'
-import { BsFire } from 'react-icons/bs'
+import TrendingComics from './TrendingComics/TrendingComics'
+import RecommendComics from './RecommendComics/RecommendComics'
+import CompletedComics from './CompletedComics/CompletedComics'
+import RecentUpdateComics from './RecentUpdateComics/RecentUpdateComics'
 
 function Home() {
   return (
     <div>
-      <SubHead title='Xu hướng' startIcon={<BsFire />} />
+      <TrendingComics />
+      <RecommendComics />
+      <CompletedComics />
+      <RecentUpdateComics />
     </div>
   )
 }

@@ -10,5 +10,5 @@ export default function useDarkSide() {
     root.classList.add(theme)
   }, [theme, colorTheme])
 
-  return [colorTheme, setTheme]
+  return [colorTheme, setTheme, theme]
 }
