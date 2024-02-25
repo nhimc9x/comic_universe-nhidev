@@ -1,0 +1,14 @@
+
+function Footer() {
+  return (
+    <div className="h-[160px] flex items-center justify-center">
+      <div className="flex max-w-[1600px] w-full mx-auto px-8 justify-center items-center">
+        <div className="h-[1px] w-full bg-cmu-primary-300"></div>
+        <div className="text-cmu-primary-400 font-bold px-4">Nhideveloper</div>
+        <div className="h-[1px] w-full bg-cmu-primary-300"></div>
+      </div>
+    </div>
+  )
+}
+
+export default Footer
