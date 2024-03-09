@@ -1,6 +1,6 @@
 function SubHead({ title, startIcon }) {
   return (
-    <div className="flex items-center text-2xl font-semibold text-cmu-primary-500 mb-4">
+    <div className="flex items-center text-cmu-primary-500 mb-4">
       <div className="text-lg mr-2 relative bottom-[1px]" >
         {startIcon}
       </div>
