@@ -3,18 +3,28 @@ import SubHead from '~/components/SubHead/SubHead'
 import { MdRecommend } from 'react-icons/md'
 import { getRecommendComics } from '~/apiServices'
 import CardComic from '~/components/CardComic/CardComic'
+import { useDispatch, useSelector } from 'react-redux'
+import { homeSlice } from '../homeSlice'
 
 function RecommenComics() {
+  const dispatch = useDispatch()
+  const dataRecommendCommicsSelector = useSelector(state => state.home.recommendCommics)
+
   const [recommendComics, setRecommendComics] = useState(Array.from({ length: 12 }))
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getRecommendComics()
-      setRecommendComics(result)
+      dispatch(homeSlice.actions.getRecommendComics(result))
       setLoading(false)
     }
-    fetchApi()
-  }, [])
+    if (!dataRecommendCommicsSelector) {
+      fetchApi()
+    } else {
+      setLoading(false)
+      setRecommendComics(dataRecommendCommicsSelector)
+    }
+  }, [dataRecommendCommicsSelector, dispatch])
   return (
     <div className="mb-10">
       <SubHead startIcon={<MdRecommend />} title="Truyện đề cử" />

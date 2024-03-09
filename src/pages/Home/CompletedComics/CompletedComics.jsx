@@ -3,18 +3,29 @@ import SubHead from '~/components/SubHead/SubHead'
 import { HiBadgeCheck } from 'react-icons/hi'
 import { getCompletedComics } from '~/apiServices'
 import CardComic from '~/components/CardComic/CardComic'
+import { useDispatch, useSelector } from 'react-redux'
+import { homeSlice } from '../homeSlice'
 
 function CompletedComics() {
+  const dispatch = useDispatch()
+  const dataCompletedCommicsSelector = useSelector(state => state.home.completedCommics)
+
   const [completedComics, setCompletedComics] = useState(Array.from({ length: 12 }))
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await getCompletedComics()
+      const result = await getCompletedComics(1)
       setCompletedComics(result.comics)
+      dispatch(homeSlice.actions.getCompletedComics(result.comics))
       setLoading(false)
     }
-    fetchApi()
-  }, [])
+    if (!dataCompletedCommicsSelector) {
+      fetchApi()
+    } else {
+      setLoading(false)
+      setCompletedComics(dataCompletedCommicsSelector)
+    }
+  }, [dataCompletedCommicsSelector, dispatch])
   return (
     <div className="mb-10">
       <SubHead startIcon={<HiBadgeCheck />} title="Đã hoàn thành" />
