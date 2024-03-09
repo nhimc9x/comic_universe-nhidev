@@ -3,18 +3,28 @@ import SubHead from '~/components/SubHead/SubHead'
 import { HiBadgeCheck } from 'react-icons/hi'
 import { getRecentUpdateComics } from '~/apiServices'
 import CardComic from '~/components/CardComic/CardComic'
+import { useDispatch, useSelector } from 'react-redux'
+import { homeSlice } from '../homeSlice'
 
 function RecentUpdateComics() {
+  const dispatch = useDispatch()
+  const dataRecentUpdateCommicsSelector = useSelector(state => state.home.recentUpdateCommics)
+
   const [recentUpdateComics, setRecentUpdateComics] = useState(Array.from({ length: 12 }))
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getRecentUpdateComics(2, 'all')
-      setRecentUpdateComics(result.comics)
+      dispatch(homeSlice.actions.getRecentUpdateComics(result.comics))
       setLoading(false)
     }
-    fetchApi()
-  }, [])
+    if (!dataRecentUpdateCommicsSelector) {
+      fetchApi()
+    } else {
+      setLoading(false)
+      setRecentUpdateComics(dataRecentUpdateCommicsSelector)
+    }
+  }, [dataRecentUpdateCommicsSelector, dispatch])
   return (
     <div className="mb-10">
       <SubHead startIcon={<HiBadgeCheck />} title="Mới cập nhật" />

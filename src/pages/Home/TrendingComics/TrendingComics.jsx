@@ -12,9 +12,12 @@ import CardComic from '~/components/CardComic/CardComic'
 import { BsFire } from 'react-icons/bs'
 import SubHead from '~/components/SubHead/SubHead'
 import { getTrendingComics } from '~/apiServices'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { homeSlice } from '../homeSlice'
 
 function Trending() {
+  const dispatch = useDispatch()
+  const dataTrendingCommicsSelector = useSelector(state => state.home.trendingCommics)
 
   const [trendingComics, setTrendingComics] = useState(Array.from({ length: 6 }))
 
@@ -23,12 +26,16 @@ function Trending() {
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getTrendingComics(1)
-      setTrendingComics(result.comics)
+      dispatch(homeSlice.actions.getTrendingComics(result.comics))
       setLoading(false)
     }
-    fetchApi()
-  }, [])
-
+    if (!dataTrendingCommicsSelector) {
+      fetchApi()
+    } else {
+      setLoading(false)
+      setTrendingComics(dataTrendingCommicsSelector)
+    }
+  }, [dataTrendingCommicsSelector, dispatch])
 
   return (
     <div className='mb-10'>

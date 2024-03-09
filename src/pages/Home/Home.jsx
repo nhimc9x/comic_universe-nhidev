@@ -7,9 +7,9 @@ function Home() {
   return (
     <div>
       <TrendingComics />
-      <RecommendComics />
-      <CompletedComics />
       <RecentUpdateComics />
+      <CompletedComics />
+      <RecommendComics />
     </div>
   )
 }
