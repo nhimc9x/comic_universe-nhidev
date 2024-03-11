@@ -9,16 +9,16 @@ export const homeSlice = createSlice({
     recommendCommics: null
   },
   reducers: {
-    getCompletedComics: (state, action) => {
+    saveCompletedComics: (state, action) => {
       state.completedCommics = action.payload
     },
-    getRecentUpdateComics: (state, action) => {
+    saveRecentUpdateComics: (state, action) => {
       state.recentUpdateCommics = action.payload
     },
-    getTrendingComics: (state, action) => {
+    saveTrendingComics: (state, action) => {
       state.trendingCommics = action.payload
     },
-    getRecommendComics: (state, action) => {
+    saveRecommendComics: (state, action) => {
       state.recommendCommics = action.payload
     }
   }

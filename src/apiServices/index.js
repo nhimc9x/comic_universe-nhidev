@@ -37,25 +37,32 @@ export const getRecentUpdateComics = async (page, status) => {
   }
 }
 
-// export const getGenres = async () => {
-//   try {
-//     const res = await request.get('/genres')
-//     return res.data
-//   } catch (error) {
-//     console.error('Error fetching data:', error)
-//   }
-// }
+export const getGenres = async () => {
+  try {
+    const res = await request.get('/genres')
 
-// export const getComcis = async (genre_id, page, status = 'all') => {
-//   try {
-//     const res = await request.get(`/genres/${genre_id}`, {
-//       params: {
-//         page: page,
-//         status: status
-//       }
-//     })
-//     return res.data
-//   } catch (error) {
-//     console.error('Error fetching data:', error)
-//   }
-// }
+    // Thường gặp lỗi trả về mảng rỗng
+    if (!res.data.length) {
+      return getGenres()
+    }
+    else {
+      return res.data
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
+}
+
+export const getComicsByGenre = async (genre_id, page, status) => {
+  try {
+    const res = await request.get(`/genres/${genre_id}`, {
+      params: {
+        status: status,
+        page: page
+      }
+    })
+    return res.data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
+}
