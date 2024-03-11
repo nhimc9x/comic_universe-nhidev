@@ -26,7 +26,7 @@ function Trending() {
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getTrendingComics(1)
-      dispatch(homeSlice.actions.getTrendingComics(result.comics))
+      dispatch(homeSlice.actions.saveTrendingComics(result.comics))
       setLoading(false)
     }
     if (!dataTrendingCommicsSelector) {

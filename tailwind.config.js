@@ -20,7 +20,7 @@ export default {
         // 'cmu-primary-200': '#ee4e34',
         // 'cmu-primary-400': '#dc3f26',
         // 'cmu-primary-600': '#b9321c',
-        'cmu-secondary': '#fcedda',
+        // 'cmu-secondary': '#fcedda',
         'cmu-primary': {
           '50': '#fef4f2',
           '100': '#fee6e2',
@@ -33,6 +33,19 @@ export default {
           '800': '#992c1b',
           '900': '#7f2a1d',
           '950': '#45120a'
+        },
+        'cmu-secondary': {
+          '50': '#fef7ee',
+          '100': '#fcedda',
+          '200': '#f8d6b0',
+          '300': '#f3b97e',
+          '400': '#ed914a',
+          '500': '#e87427',
+          '600': '#d95b1d',
+          '700': '#b4451a',
+          '800': '#90381c',
+          '900': '#74301a',
+          '950': '#3f160b'
         }
       },
       animation: {

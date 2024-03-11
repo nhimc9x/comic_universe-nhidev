@@ -15,7 +15,7 @@ function RecommenComics() {
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getRecommendComics()
-      dispatch(homeSlice.actions.getRecommendComics(result))
+      dispatch(homeSlice.actions.saveRecommendComics(result))
       setLoading(false)
     }
     if (!dataRecommendCommicsSelector) {
