@@ -2,7 +2,7 @@ import SkeletonCustom from '../SkeletonCustom/SkeletonCustom'
 
 function CardComic({ loading, thumbnail, altImg, lastChapter, title }) {
   if (loading) return (
-    <div className="h-[280px] overflow-hidden relative rounded-md group">
+    <div className="h-[280px] rounded-md">
       <SkeletonCustom />
     </div>
   )
@@ -10,7 +10,7 @@ function CardComic({ loading, thumbnail, altImg, lastChapter, title }) {
     <div className="h-[280px] overflow-hidden relative rounded group">
       <div className='w-full h-full group-hover:scale-105 duration-300 transition-transform origin-bottom'>
         <img
-          className='w-full object-cover'
+          className='w-full h-full object-cover'
           src={thumbnail}
           alt={altImg}
         />
