@@ -1,20 +1,16 @@
 import clsx from 'clsx'
-import { useDispatch } from 'react-redux'
-import { genresFiltersSlice } from '../../../pages/Genres/FilterBar/genresFiltersSlice'
+import { useCallback } from 'react'
 
-
-function PageNumber({ num, currentPage }) {
-  const dispatch = useDispatch()
-  const handleChangePage = () => {
-    dispatch(genresFiltersSlice.actions.changePageCurrent(num))
-  }
-
+function PageNumber({ num, pageCurrent, handleChangePage }) {
+  const handleChangePageCB = useCallback(() => {
+    handleChangePage(num)
+  }, [handleChangePage, num])
   return (
     <div
-      onClick={handleChangePage}
+      onClick={handleChangePageCB}
       className={clsx(
         'cursor-pointer size-9 text-base grid place-content-center rounded-full',
-        currentPage === num && 'bg-cmu-primary-500 text-white animate-slide-bottom')}>
+        pageCurrent === num && 'bg-cmu-primary-500 text-white animate-slide-bottom')}>
       {num}
     </div>
   )

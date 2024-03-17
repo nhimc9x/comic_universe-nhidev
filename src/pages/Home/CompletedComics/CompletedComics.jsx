@@ -5,6 +5,7 @@ import { getCompletedComics } from '~/apiServices'
 import CardComic from '~/components/CardComic/CardComic'
 import { useDispatch, useSelector } from 'react-redux'
 import { homeSlice } from '../homeSlice'
+import routes from '~/config/routes'
 
 function CompletedComics() {
   const dispatch = useDispatch()
@@ -28,10 +29,10 @@ function CompletedComics() {
   }, [dataCompletedCommicsSelector, dispatch])
   return (
     <div className="mb-10">
-      <SubHead startIcon={<HiBadgeCheck />} title="Đã hoàn thành" />
+      <SubHead startIcon={<HiBadgeCheck />} to={routes.completed} title="Đã hoàn thành" />
       <div className="grid grid-cols-1 xss:grid-cols-2 sms:grid-cols-3 mdl:grid-cols-4 lg:grid-cols-5 min-[1200px]:grid-cols-6 gap-4">
         {completedComics?.slice(0, 12).map((data, index) =>
-          <CardComic loading={loading} key={index} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.last_chapter?.name} title={data?.title} />
+          <CardComic loading={loading} key={index} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.lastest_chapters[0]?.name} title={data?.title} />
         )}
       </div>
     </div>

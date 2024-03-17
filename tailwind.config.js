@@ -49,7 +49,8 @@ export default {
         }
       },
       animation: {
-        'slide-bottom': 'slide-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both'
+        'slide-bottom': 'slide-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940)',
+        'loading': 'loading 2.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite'
       },
       keyframes: {
         'slide-bottom': {
@@ -60,6 +61,14 @@ export default {
           to: {
             transform: 'translateY(0)',
             opacity: 1
+          }
+        },
+        'loading': {
+          '0%': {
+            left: '-100%'
+          },
+          to: {
+            left: '100%'
           }
         }
       }

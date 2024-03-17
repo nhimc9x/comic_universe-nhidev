@@ -5,6 +5,7 @@ import { getRecentUpdateComics } from '~/apiServices'
 import CardComic from '~/components/CardComic/CardComic'
 import { useDispatch, useSelector } from 'react-redux'
 import { homeSlice } from '../homeSlice'
+import routes from '~/config/routes'
 
 function RecentUpdateComics() {
   const dispatch = useDispatch()
@@ -14,7 +15,7 @@ function RecentUpdateComics() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await getRecentUpdateComics(2, 'all')
+      const result = await getRecentUpdateComics(1)
       dispatch(homeSlice.actions.saveRecentUpdateComics(result.comics))
       setLoading(false)
     }
@@ -27,7 +28,7 @@ function RecentUpdateComics() {
   }, [dataRecentUpdateCommicsSelector, dispatch])
   return (
     <div className="mb-10">
-      <SubHead startIcon={<MdOutlineUpdate />} title="Mới cập nhật" />
+      <SubHead startIcon={<MdOutlineUpdate />} to={routes.recent} title="Mới cập nhật" />
       <div className="grid grid-cols-1 xss:grid-cols-2 sms:grid-cols-3 mdl:grid-cols-4 lg:grid-cols-5 min-[1200px]:grid-cols-6 gap-4">
         {recentUpdateComics?.slice(0, 12).map((data, index) =>
           <CardComic loading={loading} key={index} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.last_chapter?.name} title={data?.title} />

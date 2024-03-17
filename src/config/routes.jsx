@@ -2,7 +2,10 @@ const routes = {
   home: '/',
   genres: '/theloai',
   top: '/xephang',
-  new: '/moiphathanh'
+  trending: '/trending',
+  recommend: '/recommend',
+  recent: '/recent',
+  completed: '/completed'
 }
 
 export default routes

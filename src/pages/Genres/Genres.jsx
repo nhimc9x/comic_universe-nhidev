@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import FilterBar from './FilterBar/FilterBar'
 import { getComicsByGenre } from '../../apiServices'
 import CardComic from '~/components/CardComic/CardComic'
@@ -7,6 +7,7 @@ import Pagination from '../../components/Pagination/Pagination'
 import { getGenres } from '../../apiServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { genresFiltersSlice } from './FilterBar/genresFiltersSlice'
+import scrollToTop from '../../utils/scrollToTop'
 
 function Genres() {
   const dispatch = useDispatch()
@@ -41,6 +42,22 @@ function Genres() {
     }
   }, [dataGenres, dispatch, genreCurrent?.id, pageCurrent, statusCurrent])
 
+  const handlePrevPage = () => {
+    if (pageCurrent === 1) return 0
+    dispatch(genresFiltersSlice.actions.changePageCurrent(pageCurrent - 1))
+    scrollToTop()
+  }
+
+  const handleNextPage = () => {
+    if (pageCurrent === totalPage) return 0
+    dispatch(genresFiltersSlice.actions.changePageCurrent(pageCurrent + 1))
+    scrollToTop()
+  }
+
+  const handleChangePage = (num) => {
+    dispatch(genresFiltersSlice.actions.changePageCurrent(num))
+    scrollToTop()
+  }
 
   return (
     <div className='mb-10 min-h-[80vh]'>
@@ -59,11 +76,9 @@ function Genres() {
               <CardComic loading={loading} key={index} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.last_chapter?.name} title={data?.title} />
             )}
           </div>
-          <Pagination totalPage={totalPage || 5} currentPage={pageCurrent || 1} />
+          <Pagination totalPage={totalPage} pageCurrent={pageCurrent} handleChangePage={handleChangePage} handlePrevPage={handlePrevPage} handleNextPage={handleNextPage} />
         </>
       }
-
-
     </div>
   )
 }

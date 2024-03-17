@@ -46,7 +46,7 @@ function FilterBar() {
 
       </div>
       <div className='border-t border-b border-[#e5e7eb] dark:border-[#262626] dark:text-gray-300'>
-        {dataGenres ?
+        {dataGenres.length ?
           (<Swiper
             slidesPerView={'auto'}
             autoHeight={true}
@@ -62,7 +62,7 @@ function FilterBar() {
               </SwiperSlide>
             )}
           </Swiper>) :
-          <div className="animate-pulse h-11 bg-[#ebebeb] dark:bg-[#202020]"></div>
+          <div className="animate-pulse min-h-11 bg-[#ebebeb] dark:bg-[#202020]"></div>
         }
       </div>
       <div className="bg-sky-400 dark:bg-sky-900 flex items-center text-white my-4 min-h-11 py-2 gap-2 rounded px-2">
