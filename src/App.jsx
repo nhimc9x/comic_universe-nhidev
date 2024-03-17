@@ -2,15 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout/MainLayout'
 import { PUBLIC_ROUTES } from './routes/routes'
 import { Fragment } from 'react'
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
-
+import ResetScroll from './components/ResetScroll/ResetScroll'
 
 function App() {
 
   return (
     <>
       <Router>
-        <ScrollToTop />
+        <ResetScroll />
         <Routes>
           {PUBLIC_ROUTES.map((route, index) => {
             const Page = route.component

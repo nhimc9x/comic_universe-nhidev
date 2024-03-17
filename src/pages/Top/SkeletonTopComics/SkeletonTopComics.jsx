@@ -1,10 +1,10 @@
-import SkeletonTopComicItem from '../TopComicWrap/SkeletonTopComicItem/SkeletonTopComicItem'
+import SkeletonTopComicItem from './SkeletonTopComicItem/SkeletonTopComicItem'
 
 function SkeletonTopComic({ count }) {
-  const arr = Array.from({ length: count || 10 })
+  const listSkeleton = Array.from({ length: count || 10 })
   return (
     <>
-      {arr.map((data, index) =>
+      {listSkeleton.map((data, index) =>
         <SkeletonTopComicItem key={index} rank={index} />
       )}
     </>

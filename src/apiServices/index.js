@@ -28,9 +28,9 @@ export const getCompletedComics = async (page) => {
   }
 }
 
-export const getRecentUpdateComics = async (page, status) => {
+export const getRecentUpdateComics = async (page, status = 'all') => {
   try {
-    const res = await request.get(`/recent-update-comics?page=${page}&status=${status}`)
+    const res = await requestV2.get(`/recent-update-comics?page=${page}&status=${status}`)
     return res.data
   } catch (error) {
     console.error('Error fetching data:', error)

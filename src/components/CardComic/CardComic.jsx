@@ -1,4 +1,5 @@
 import SkeletonCustom from '../SkeletonCustom/SkeletonCustom'
+import placeholderImg from '~/assets/img_placeholder.jpg'
 
 function CardComic({ loading, thumbnail, altImg, lastChapter, title }) {
   if (loading) return (
@@ -13,6 +14,12 @@ function CardComic({ loading, thumbnail, altImg, lastChapter, title }) {
           className='w-full h-full object-cover'
           src={thumbnail}
           alt={altImg}
+          onError={(e) => {
+            if (e.target.src !== placeholderImg) {
+              e.target.onerror = null
+              e.target.src = placeholderImg
+            }
+          }}
         />
       </div>
       <div className='absolute top-0 left-0 bg-[#3f3f3f] text-white text-sm py-1 px-2'>{lastChapter}</div>

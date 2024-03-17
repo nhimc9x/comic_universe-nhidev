@@ -14,8 +14,9 @@ import SubHead from '~/components/SubHead/SubHead'
 import { getTrendingComics } from '~/apiServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { homeSlice } from '../homeSlice'
+import routes from '~/config/routes'
 
-function Trending() {
+function TrendingComics() {
   const dispatch = useDispatch()
   const dataTrendingCommicsSelector = useSelector(state => state.home.trendingCommics)
 
@@ -39,7 +40,7 @@ function Trending() {
 
   return (
     <div className='mb-10'>
-      <SubHead title='Xu hướng' startIcon={<BsFire />} />
+      <SubHead title='Xu hướng' to={routes.trending} startIcon={<BsFire />} />
       <Swiper
         slidesPerView={1}
         spaceBetween={20}
@@ -75,7 +76,7 @@ function Trending() {
 
         {trendingComics?.map((data, index) => (
           <SwiperSlide key={index}>
-            <CardComic loading={loading} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.last_chapter?.name} title={data?.title} />
+            <CardComic loading={loading} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.lastest_chapters[0]?.name} title={data?.title} />
           </SwiperSlide>
         ))}
 
@@ -84,4 +85,4 @@ function Trending() {
   )
 }
 
-export default Trending
+export default TrendingComics

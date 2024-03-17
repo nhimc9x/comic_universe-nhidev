@@ -1,6 +1,7 @@
-function SubHead({ title, startIcon }) {
+import { NavLink } from 'react-router-dom'
+function SubHead({ to, title, startIcon }) {
   return (
-    <div className="flex items-center text-cmu-primary-500 mb-4">
+    <NavLink to={to} className="flex items-center text-cmu-primary-500 mb-4">
       <div className="text-lg mr-2 relative bottom-[1px]" >
         {startIcon}
       </div>
@@ -10,7 +11,7 @@ function SubHead({ title, startIcon }) {
       hover:ring-2 hover:ring-offset-2 hover:ring-offset-white dark:hover:ring-offset-[#18181b] hover:ring-cmu-primary-400">
         More
       </div>
-    </div>
+    </NavLink>
   )
 }
 
