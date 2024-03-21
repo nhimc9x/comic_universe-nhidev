@@ -1,7 +1,7 @@
 import { IoEye } from 'react-icons/io5'
 import { IoHeartCircle } from 'react-icons/io5'
 import numberColor from '../../../utils/numberColor'
-import formatNumber from '../../../utils/fomatNumber'
+import formatNumber from '../../../utils/formatNumber'
 
 function TopComicWrap({ rank, thumbnail, title, chapter, totalViews, followers, genres }) {
   return (

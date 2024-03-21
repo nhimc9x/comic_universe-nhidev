@@ -101,3 +101,12 @@ export const getTopComics = async (type, page, status) => {
     console.error('Error fetching data:', error)
   }
 }
+
+export const getComicsDetail = async (comicsId) => {
+  try {
+    const res = await requestV2.get(`/comics/${comicsId}`)
+    return res.data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
+}

@@ -1,7 +1,7 @@
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import numberColor from '../../../../utils/numberColor'
-import formatNumber from '../../../../utils/fomatNumber'
+import formatNumber from '../../../../utils/formatNumber'
 
 function SkeletonTopComicItem({ rank }) {
   const theme = localStorage.theme

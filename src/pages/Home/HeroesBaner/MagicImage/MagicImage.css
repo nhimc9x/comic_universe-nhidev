@@ -1,0 +1,69 @@
+.image-cover {
+  --default-rotate: 12deg;
+  position: relative;
+}
+.image-cover img {
+  height: 100%;
+  --rotateY: 0deg;
+  --rotateX: 0deg;
+  transform: perspective(1200px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+  transition: transform 500ms;
+  border: #2f2f2f 6px double;
+}
+.spot {
+  width: calc(100% / 2);
+  height: calc(100% / 3);
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+}
+.spot:nth-child(1) {
+  top: 0;
+  left: 0;
+  &:hover ~ img {
+    --rotateX: var(--default-rotate);
+    --rotateY: calc(var(--default-rotate) * -1);
+  }
+}
+.spot:nth-child(2) {
+  top: 0;
+  right: 0;
+  &:hover ~ img {
+    --rotateX: var(--default-rotate);
+    --rotateY: var(--default-rotate);
+  }
+}
+
+.spot:nth-child(3) {
+  left: 0;
+  top: calc(100% / 3);
+  &:hover ~ img {
+    --rotateX: 0;
+    --rotateY: calc(var(--default-rotate) * -1);
+  }
+}
+
+.spot:nth-child(4) {
+  right: 0;
+  top: calc(100% / 3);
+  &:hover ~ img {
+    --rotateX: 0;
+    --rotateY: var(--default-rotate);
+  }
+}
+.spot:nth-child(5) {
+  bottom: 0;
+  left: 0;
+  &:hover ~ img {
+    --rotateX: calc(var(--default-rotate) * -1);
+    --rotateY: calc(var(--default-rotate) * -1);
+  }
+}
+.spot:nth-child(6) {
+  bottom: 0;
+  right: 0;
+  &:hover ~ img {
+    --rotateX: calc(var(--default-rotate) * -1);
+    --rotateY: var(--default-rotate);
+  }
+}
