@@ -16,6 +16,9 @@ export default {
       fontFamily: {
         'cmu-Nunito': ['Nunito', 'sans-serif']
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
+      },
       colors: {
         // 'cmu-primary-200': '#ee4e34',
         // 'cmu-primary-400': '#dc3f26',
@@ -50,7 +53,12 @@ export default {
       },
       animation: {
         'slide-bottom': 'slide-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940)',
-        'loading': 'loading 2.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite'
+        'loading': 'loading 2.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite',
+        'shower': 'shower linear 8s infinite',
+        'back-in-down': 'back-in-down 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940)    both',
+        'scale-up-center': 'scale-up-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)',
+        'spin-slow': 'spin-slow linear 3s infinite',
+        'spin-reverse': 'spin-reverse linear 4s infinite'
       },
       keyframes: {
         'slide-bottom': {
@@ -70,7 +78,62 @@ export default {
           to: {
             left: '100%'
           }
-        }
+        },
+        'shower': {
+          '0%': {
+            transform: 'rotate(215deg) translateX(0)',
+            opacity: 0
+          },
+          '40%': {
+            opacity: 1
+          },
+          '100%': {
+            transform: 'rotate(215deg) translateX(-1200px)',
+            opacity: 1
+          }
+        },
+        'back-in-down': {
+          '0%': {
+            transform: ' scale(.6) translateY(-300px)',
+            opacity: .7
+          },
+          '40%': {
+            transform: 'scale(.6) translateY(0px)',
+            'transform-origin': '50% 0%',
+            opacity: .7
+          },
+          to: {
+            transform: 'scale(1)',
+            'transform-origin': '50% 0%',
+            opacity: 1
+          }
+        },
+        'spin-slow': {
+          '100%': {
+            transform: 'rotate(360deg)'
+          }
+        },
+        'spin-reverse': {
+          '0%': {
+            transform: 'rotate(360deg)'
+          }
+        },
+        'scale-up-center': {
+          '0%': {
+            transform: 'scale(.3)'
+          },
+          to: {
+            transform: 'scale(1)'
+          }
+        },
+        // 'scale-up-center': {
+        //   '0%': {
+        //     transform: 'scale(.3)'
+        //   },
+        //   to: {
+        //     transform: 'scale(1)'
+        //   }
+        // }
       }
     }
   },
