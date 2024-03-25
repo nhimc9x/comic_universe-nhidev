@@ -25,11 +25,13 @@ function ScrollToTop() {
       <div
         onClick={scrollToTop}
         className={clsx(
-          'text-3xl cursor-pointer size-12 grid place-content-center rounded-full bg-gray-200 group dark:bg-[#2f2f2f] drop-shadow-md border border-cmu-secondary-200 text-cmu-primary-500',
+          'text-3xl cursor-pointer size-12 p-1 rounded-full group drop-shadow-xl bg-gradient-to-r from-[#9f9f9f] to-[#ef5b44]',
           isHidden && 'hidden'
         )}
       >
-        <IoMdRocket className='group-active:-translate-y-4 duration-300' />
+        <div className="w-full h-full grid place-content-center rounded-full text-white bg-gradient-to-r from-[#ef5b44] to-[#9f9f9f]">
+          <IoMdRocket className='group-active:-translate-y-4 duration-300' />
+        </div>
       </div>
     </div>
   )

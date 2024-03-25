@@ -76,7 +76,7 @@ function TrendingComics() {
 
         {trendingComics?.map((data, index) => (
           <SwiperSlide key={index}>
-            <CardComic loading={loading} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.lastest_chapters[0]?.name} title={data?.title} />
+            <CardComic loading={loading} comicId={data?.id} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.lastest_chapters[0]?.name} title={data?.title} />
           </SwiperSlide>
         ))}
 

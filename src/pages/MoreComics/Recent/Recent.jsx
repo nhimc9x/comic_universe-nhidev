@@ -57,6 +57,7 @@ function Recent() {
           comics?.map(comic =>
             <CardComicPro
               key={comic?.id}
+              comicId={comic?.id}
               thumbnail={comic?.thumbnail}
               isTrending={comic?.is_trending}
               title={comic?.title}

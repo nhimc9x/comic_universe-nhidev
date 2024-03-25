@@ -38,6 +38,7 @@ function Top() {
               rankingsDataDefault?.slice(0, quantity)?.map((comic, index) =>
                 <TopComicWrap
                   key={comic?.id}
+                  comicId={comic?.id}
                   rank={index}
                   title={comic?.title}
                   thumbnail={comic?.thumbnail}

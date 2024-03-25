@@ -3,7 +3,7 @@ import MagicImage from './MagicImage/MagicImage'
 import TextBox from './TextBox/TextBox'
 import { getComicsDetail, getRecommendComics } from '../../../apiServices'
 import MeteorShower from './MeteorShower/MeteorShower'
-import Loading from './Loading/Loading'
+import Intro from './Intro/Intro'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -26,10 +26,15 @@ function HeroesBaner() {
       (async () => {
         setLoading(true)
         const listComic = await getRecommendComics()
-        const listComicDetail = await Promise.all(listComic.map(async (comic) => {
+        const findComicDetail = await Promise.all(listComic.map(async (comic) => {
           const result = await getComicsDetail(comic?.id)
+          if (!result) return null
           return { ...result, chapters: comic?.lastest_chapter?.name }
         }))
+
+        // Fix bug khi không tìm thấy 1 số comic bị lỗi (bỏ qua comic đó)
+        const listComicDetail = findComicDetail.filter(comic => comic !== null)
+
         sessionStorage.setItem('comicsDetailData', JSON.stringify(listComicDetail))
         setRecommendComics(listComicDetail)
         setLoading(false)
@@ -68,7 +73,7 @@ function HeroesBaner() {
 
         <MeteorShower />
 
-        {loading ? <Loading /> :
+        {loading ? <Intro /> :
           recommendComics?.map((data, index) => (
             <SwiperSlide key={index} className='grid items-center'>
               <div className="flex w-full px-10 gap-10">
