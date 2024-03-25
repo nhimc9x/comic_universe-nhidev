@@ -3,9 +3,9 @@ const routes = {
   genres: '/theloai',
   top: '/xephang',
   trending: '/trending',
-  recommend: '/recommend',
   recent: '/recent',
-  completed: '/completed'
+  completed: '/completed',
+  comics: '/comics/:comicId'
 }
 
 export default routes

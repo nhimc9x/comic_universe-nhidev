@@ -5,8 +5,7 @@ export const homeSlice = createSlice({
   initialState: {
     completedCommics: null,
     recentUpdateCommics: null,
-    trendingCommics: null,
-    recommendCommics: null
+    trendingCommics: null
   },
   reducers: {
     saveCompletedComics: (state, action) => {
@@ -17,9 +16,6 @@ export const homeSlice = createSlice({
     },
     saveTrendingComics: (state, action) => {
       state.trendingCommics = action.payload
-    },
-    saveRecommendComics: (state, action) => {
-      state.recommendCommics = action.payload
     }
   }
 })

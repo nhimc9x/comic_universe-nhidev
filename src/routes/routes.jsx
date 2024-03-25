@@ -4,8 +4,8 @@ import Home from '../pages/Home/Home'
 import Top from '../pages/Top/Top'
 import Completed from '../pages/MoreComics/Completed/Completed'
 import Recent from '../pages/MoreComics/Recent/Recent'
-import Recommend from '../pages/MoreComics/Recommend/Recommend'
 import Trending from '../pages/MoreComics/Trending/Trending'
+import ComicDetail from '../pages/ComicDetail/ComicDetail'
 
 export const PUBLIC_ROUTES = [
   { path: routes.home, component: Home },
@@ -13,9 +13,10 @@ export const PUBLIC_ROUTES = [
   { path: routes.top, component: Top },
 
   { path: routes.trending, component: Trending },
-  { path: routes.recommend, component: Recommend },
   { path: routes.recent, component: Recent },
-  { path: routes.completed, component: Completed }
+  { path: routes.completed, component: Completed },
+
+  { path: routes.comics, component: ComicDetail }
 ]
 
 const PRIVATE_ROUTES = []
