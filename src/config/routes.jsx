@@ -5,7 +5,8 @@ const routes = {
   trending: '/trending',
   recent: '/recent',
   completed: '/completed',
-  comics: '/comics/:comicId'
+  comics: '/comics/:comicId',
+  singleChapter: '/comics/:comicId/chapters/:chapterId'
 }
 
 export default routes

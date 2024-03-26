@@ -6,6 +6,8 @@ import Completed from '../pages/MoreComics/Completed/Completed'
 import Recent from '../pages/MoreComics/Recent/Recent'
 import Trending from '../pages/MoreComics/Trending/Trending'
 import ComicDetail from '../pages/ComicDetail/ComicDetail'
+import SingleChapter from '../pages/SingleChapter/SingleChapter'
+import SingleChapterLayout from '../layouts/SingleChapterLayout/SingleChapterLayout'
 
 export const PUBLIC_ROUTES = [
   { path: routes.home, component: Home },
@@ -16,7 +18,9 @@ export const PUBLIC_ROUTES = [
   { path: routes.recent, component: Recent },
   { path: routes.completed, component: Completed },
 
-  { path: routes.comics, component: ComicDetail }
+  { path: routes.comics, component: ComicDetail },
+
+  { path: routes.singleChapter, component: SingleChapter, layout: SingleChapterLayout }
 ]
 
 const PRIVATE_ROUTES = []
