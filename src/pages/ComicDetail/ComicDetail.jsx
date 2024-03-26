@@ -109,7 +109,7 @@ function ComicDetail() {
                 </div>
               </div>
             </div>
-            <ListChapter listChapter={detailData?.chapters} />
+            <ListChapter comicId={detailData?.id} listChapter={detailData?.chapters} />
           </div>
         }
 
