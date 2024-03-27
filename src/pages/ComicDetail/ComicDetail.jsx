@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getComicsDetail } from '../../apiServices'
 import Book3D from './Book3D/Book3D'
@@ -11,21 +12,30 @@ import { FaStar } from 'react-icons/fa6'
 import { ImBook } from 'react-icons/im'
 import Loading from '../../components/Loading/Loading'
 import ListChapter from './ListChapter/ListChapter'
+import { comicDetailSlice } from './comicDetailSlice'
 
 function ComicDetail() {
-  const { comicId } = useParams()
+  const dispatch = useDispatch()
+  const dataComicDetail = useSelector(state => state.comicDetail.dataComicDetail)
 
+  const { comicId } = useParams()
   const [detailData, setDetailData] = useState()
   const [loading, setLoading] = useState()
 
   useEffect(() => {
-    (async () => {
-      setLoading(true)
-      const result = await getComicsDetail(comicId)
-      setDetailData(result)
-      setLoading(false)
-    })()
-  }, [comicId])
+    if (comicId !== dataComicDetail?.id) {
+      (async () => {
+        setLoading(true)
+        const result = await getComicsDetail(comicId)
+        dispatch(comicDetailSlice.actions.saveComicDetail(result))
+        setDetailData(result)
+        setLoading(false)
+      })()
+    }
+    else {
+      setDetailData(dataComicDetail)
+    }
+  }, [comicId, dispatch])
 
   return (
     <div className="">
@@ -109,7 +119,7 @@ function ComicDetail() {
                 </div>
               </div>
             </div>
-            <ListChapter comicId={detailData?.id} listChapter={detailData?.chapters} />
+            <ListChapter comicId={comicId} listChapter={detailData?.chapters} />
           </div>
         }
 

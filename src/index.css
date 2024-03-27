@@ -45,4 +45,6 @@ html {
 .text-shadow {
   text-shadow: 1px 1px 2px #992c1b;
 }
-
+.corner-drop-shadow {
+  filter: drop-shadow(0px 0px 12px #ffd9009e);
+}
