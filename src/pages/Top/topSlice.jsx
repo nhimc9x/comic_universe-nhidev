@@ -3,11 +3,23 @@ import { createSlice } from '@reduxjs/toolkit'
 export const topSlice = createSlice({
   name: 'rankingComics',
   initialState: {
-    dataTopAll: []
+    dataTopComics: [],
+    type: 'all',
+    isChanged: true,
+    quantity: 10
   },
   reducers: {
-    saveDataTopAll: (state, action) => {
-      state.dataTopAll = action.payload
+    saveDataTopComics: (state, action) => {
+      state.dataTopComics = action.payload
+      state.isChanged = false
+    },
+    changeType: (state, action) => {
+      state.type = action.payload
+      state.quantity = 10
+      state.isChanged = true
+    },
+    changeQuantity: (state) => {
+      state.quantity = undefined
     }
   }
 })

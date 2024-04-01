@@ -7,15 +7,13 @@ const categories = [
   { id: 'monthly', title: 'Top Tháng' }
 ]
 
-function renderCategoryTopComics(type, setType) {
+function renderCategoryTopComics() {
   return (
     <div className="grid grid-cols-4 gap-[1px]">
       {categories.map(category => (
         <CategoryTopComics
           key={category.id}
           id={category.id}
-          type={type}
-          setType={setType}
           title={category.title}
         />
       ))}
