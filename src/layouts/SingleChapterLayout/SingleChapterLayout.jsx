@@ -1,8 +1,9 @@
-
 function SingleChapterLayout({ children }) {
   return (
-    <div className="w-screen h-dvh bg-cyan-700">
-      {children}
+    <div className="bg-[#18181b] min-h-dvh">
+      <div className="max-w-[900px] w-full mx-auto">
+        {children}
+      </div>
     </div>
   )
 }

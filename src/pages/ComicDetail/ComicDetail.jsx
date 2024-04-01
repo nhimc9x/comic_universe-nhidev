@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { getComicsDetail } from '../../apiServices'
 import Book3D from './Book3D/Book3D'
 import { MdPerson2 } from 'react-icons/md'
@@ -53,12 +53,18 @@ function ComicDetail() {
             <div className="flex gap-10">
               <div className="flex flex-col gap-10 items-center">
                 <Book3D thumbnail={detailData?.thumbnail} />
-                <div className="flex gap-2 bg-cmu-primary-500/60 group text-cmu-secondary-100 ring-offset-1 ring-offset-transparent ring-1 ring-cmu-primary-500 hover:bg-cmu-secondary-100 hover:text-cmu-primary-500 duration-200 w-max px-4 py-2 font-semibold rounded">
+
+                <NavLink
+                  to={`/comics/${comicId}/chapters/${detailData?.chapters[detailData?.chapters.length - 1].id}`}
+                  className="flex gap-2 bg-cmu-primary-500/60 group text-cmu-secondary-100 ring-offset-1 ring-offset-transparent ring-1
+                 ring-cmu-primary-500 hover:bg-cmu-secondary-100 hover:text-cmu-primary-500 duration-200 w-max px-4 py-2 font-semibold rounded"
+                >
                   <div className="flex items-center group-hover:-rotate-45 duration-200">
                     <ImBook />
                   </div>
                   <div className="">Đọc từ đầu</div>
-                </div>
+                </NavLink>
+
               </div>
               <div className="flex-1 text-gray-100">
                 <div className="text-3xl font-bold">

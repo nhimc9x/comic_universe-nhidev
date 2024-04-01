@@ -5,7 +5,7 @@ import ScrollToTop from '../../components/ScrollToTop/ScrollToTop'
 
 function MainLayout({ children }) {
   return (
-    <div className="bg-white dark:bg-[#18181b] min-h-screen">
+    <div className="bg-white dark:bg-[#18181b] min-h-dvh">
       <LoadingBar />
       <Header />
       <div className="max-w-[1440px] w-full mx-auto pt-32 px-4">
