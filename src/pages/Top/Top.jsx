@@ -10,32 +10,33 @@ import clsx from 'clsx'
 
 function Top() {
   const dispatch = useDispatch()
-  const rankingsDataDefault = useSelector(state => state.top.dataTopAll)
+  const dataTopComics = useSelector(state => state.top.dataTopComics)
+  const type = useSelector(state => state.top.type)
+  const isChanged = useSelector(state => state.top.isChanged)
+  const quantity = useSelector(state => state.top.quantity)
 
-  const [quantity, setQuantity] = useState(10)
   const [loading, setLoading] = useState()
-  const [type, setType] = useState('all')
 
   useEffect(() => {
-    (async () => {
-      setQuantity(10)
-      setLoading(true)
-      const result = type === 'all' ? await getAllTopComics() : await getTopComics(type, 1, 'all')
-      dispatch(topSlice.actions.saveDataTopAll(result.comics))
-      setLoading(false)
-    })()
-
-  }, [dispatch, type])
+    if (isChanged) {
+      (async () => {
+        setLoading(true)
+        const result = type === 'all' ? await getAllTopComics() : await getTopComics(type, 1, 'all')
+        dispatch(topSlice.actions.saveDataTopComics(result.comics))
+        setLoading(false)
+      })()
+    }
+  }, [dispatch, type, isChanged])
 
   return (
     <div className="px-4">
       <div className='border-x-2 border-b-2 border-[#e5e7eb] dark:border-[#262626]'>
-        {renderCategoryTopComics(type, setType)}
+        {renderCategoryTopComics()}
         <div className="px-4 py-8 grid grid-cols-1 lg:grid-cols-2">
           {
             loading ?
               <SkeletonTopComic count={quantity} /> :
-              rankingsDataDefault?.slice(0, quantity)?.map((comic, index) =>
+              dataTopComics?.slice(0, quantity)?.map((comic, index) =>
                 <TopComicWrap
                   key={comic?.id}
                   comicId={comic?.id}
@@ -50,7 +51,7 @@ function Top() {
           }
         </div>
         <div
-          onClick={() => setQuantity()}
+          onClick={() => dispatch(topSlice.actions.changeQuantity())}
           className={clsx(
             'text-5xl mx-auto w-max cursor-pointer mt-2 mb-6 text-cmu-primary-500 flex items-center flex-col',
             quantity ?? 'hidden')}>
