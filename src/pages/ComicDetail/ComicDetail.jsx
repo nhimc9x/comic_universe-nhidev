@@ -13,6 +13,7 @@ import { ImBook } from 'react-icons/im'
 import Loading from '../../components/Loading/Loading'
 import ListChapter from './ListChapter/ListChapter'
 import { comicDetailSlice } from './comicDetailSlice'
+import usePageTitle from '~/hooks/usePageTitle'
 
 function ComicDetail() {
   const dispatch = useDispatch()
@@ -36,6 +37,8 @@ function ComicDetail() {
       setDetailData(dataComicDetail)
     }
   }, [comicId, dispatch])
+
+  usePageTitle(detailData?.title)
 
   return (
     <div className="">

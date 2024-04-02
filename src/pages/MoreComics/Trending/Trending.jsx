@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import CardComicPro from '~/components/CardComicPro/CardComicPro'
-import { getCompletedComics, getRecentUpdateComics, getTrendingComics } from '../../../apiServices'
+import { getTrendingComics } from '../../../apiServices'
 import TitleFrame from '../../../components/TitleFrame/TitleFrame'
 import SkeletonCardComicPro from '../../../components/CardComicPro/SkeletonCardComicPro/SkeletonCardComicPro'
 import Pagination from '../../../components/Pagination/Pagination'
@@ -9,8 +9,11 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { moreComicsSlice } from '../moreComicsSlice'
 import routes from '../../../config/routes'
+import usePageTitle from '~/hooks/usePageTitle'
 
 function Trending() {
+  usePageTitle('Truyện xu hướng')
+
   const location = useLocation()
   const navigate = useNavigate()
   const urlParams = new URLSearchParams(location.search)

@@ -9,8 +9,10 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { moreComicsSlice } from '../moreComicsSlice'
 import routes from '../../../config/routes'
+import usePageTitle from '~/hooks/usePageTitle'
 
 function Completed() {
+  usePageTitle('Truyện đã hoàn thành')
   const location = useLocation()
   const navigate = useNavigate()
   const urlParams = new URLSearchParams(location.search)

@@ -7,8 +7,10 @@ import SkeletonTopComic from './SkeletonTopComics/SkeletonTopComics'
 import renderCategoryTopComics from './renderCategoryTopComics/renderCategoryTopComics '
 import { BsChevronCompactDown } from 'react-icons/bs'
 import clsx from 'clsx'
+import usePageTitle from '~/hooks/usePageTitle'
 
 function Top() {
+  usePageTitle('Xếp hạng | UComics')
   const dispatch = useDispatch()
   const dataTopComics = useSelector(state => state.top.dataTopComics)
   const type = useSelector(state => state.top.type)
