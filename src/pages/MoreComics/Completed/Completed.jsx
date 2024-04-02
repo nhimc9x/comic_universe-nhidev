@@ -6,47 +6,55 @@ import SkeletonCardComicPro from '../../../components/CardComicPro/SkeletonCardC
 import Pagination from '../../../components/Pagination/Pagination'
 import scrollToTop from '../../../utils/scrollToTop'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { moreComicsSlice } from '../moreComicsSlice'
+import routes from '../../../config/routes'
 
 function Completed() {
   const location = useLocation()
   const navigate = useNavigate()
   const urlParams = new URLSearchParams(location.search)
-  const page = urlParams.get('page')
 
-  const [comics, setComics] = useState([])
+  const pageCurrent = urlParams.get('page')
+
+  const dispatch = useDispatch()
+
+  const dataMoreComics = useSelector(state => state.moreComics.dataCurrent)
+  const pathNameCurrent = useSelector(state => state.moreComics.pathNameCurrent)
+
   const [loading, setLoading] = useState(false)
   const [totalPage, setTotalPage] = useState()
-  const [pageCurrent, setPageCurrent] = useState(+page || 1)
 
   useEffect(() => {
-    navigate(`/completed?page=${pageCurrent}`)
-  }, [navigate, pageCurrent])
-
-  useEffect(() => {
-    (async () => {
-      setLoading(true)
-      const result = await getCompletedComics(pageCurrent)
-      setComics(result.comics)
-      setTotalPage(result.total_pages)
-      setLoading(false)
-    })()
-  }, [pageCurrent])
+    if (dataMoreComics?.current_page != pageCurrent || pathNameCurrent !== routes.completed) {
+      (async () => {
+        setLoading(true)
+        const result = await getCompletedComics(pageCurrent)
+        dispatch(moreComicsSlice.actions.saveDataCurrent(result))
+        dispatch(moreComicsSlice.actions.changePathNameCurrent(location.pathname))
+        setLoading(false)
+      })()
+      if (dataMoreComics.total_pages !== totalPage) {
+        setTotalPage(dataMoreComics.total_pages)
+      }
+    }
+  }, [dataMoreComics, dispatch, location.pathname, pageCurrent, pathNameCurrent, totalPage])
 
   const handlePrevPage = () => {
-    if (pageCurrent === 1) return 0
+    if (pageCurrent == 1) return 0
     scrollToTop()
-    setPageCurrent(pageCurrent - 1)
+    navigate(`${location.pathname}?page=${+pageCurrent - 1}`)
   }
 
   const handleNextPage = () => {
-    if (pageCurrent === totalPage) return 0
+    if (pageCurrent == totalPage) return 0
     scrollToTop()
-    setPageCurrent(pageCurrent + 1)
+    navigate(`${location.pathname}?page=${+pageCurrent + 1}`)
   }
 
   const handleChangePage = (num) => {
     scrollToTop()
-    setPageCurrent(num)
+    navigate(`${location.pathname}?page=${num}`)
   }
 
   return (
@@ -54,21 +62,20 @@ function Completed() {
       <TitleFrame title={'Đã hoàn thành'} />
       <div className="grid w-max max-w-full mx-auto grid-cols-1 sms:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 min-[1224px]:grid-cols-5 gap-4">
         {loading ? <SkeletonCardComicPro count={20} /> :
-          comics?.map(comic =>
+          dataMoreComics?.comics?.map(comic =>
             <CardComicPro
               key={comic?.id}
               comicId={comic?.id}
               thumbnail={comic?.thumbnail}
               isTrending={comic?.is_trending}
               title={comic?.title}
-              author={comic?.authors}
+              updateAt={comic?.updated_at}
               totalViews={comic?.total_views}
-              totalCmt={comic?.total_comments}
               followers={comic?.followers} />
           )
         }
       </div>
-      <Pagination totalPage={totalPage} pageCurrent={pageCurrent} handleChangePage={handleChangePage} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
+      <Pagination totalPage={totalPage} pageCurrent={+pageCurrent} handleChangePage={handleChangePage} handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
     </div>
   )
 }

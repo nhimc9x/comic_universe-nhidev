@@ -14,7 +14,6 @@ import SubHead from '~/components/SubHead/SubHead'
 import { getTrendingComics } from '~/apiServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { homeSlice } from '../homeSlice'
-import routes from '~/config/routes'
 
 function TrendingComics() {
   const dispatch = useDispatch()
@@ -40,7 +39,7 @@ function TrendingComics() {
 
   return (
     <div className='mb-10'>
-      <SubHead title='Xu hướng' to={routes.trending} startIcon={<BsFire />} />
+      <SubHead title='Xu hướng' to={'/trending?page=1'} startIcon={<BsFire />} />
       <Swiper
         slidesPerView={1}
         spaceBetween={20}
@@ -76,7 +75,14 @@ function TrendingComics() {
 
         {trendingComics?.map((data, index) => (
           <SwiperSlide key={index}>
-            <CardComic loading={loading} comicId={data?.id} thumbnail={data?.thumbnail} altImg={data?.id} lastChapter={data?.last_chapter?.name} title={data?.title} />
+            <CardComic
+              loading={loading}
+              comicId={data?.id}
+              thumbnail={data?.thumbnail}
+              altImg={data?.id}
+              lastChapter={data?.last_chapter?.name}
+              title={data?.title}
+            />
           </SwiperSlide>
         ))}
 

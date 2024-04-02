@@ -4,12 +4,14 @@ import genresFiltersReducer from '../pages/Genres/FilterBar/genresFiltersSlice'
 import topReducer from '../pages/Top/topSlice'
 import comicDetailReducer from '../pages/ComicDetail/comicDetailSlice'
 import loadingBarReducer from './slice/loadingBarSlice'
+import moreComicsReducer from '../pages/MoreComics/moreComicsSlice'
 
 export const store = configureStore({
   reducer: {
     home: homeReducer,
     genresFilters: genresFiltersReducer,
     top: topReducer,
+    moreComics: moreComicsReducer,
     comicDetail: comicDetailReducer,
     loadingBar: loadingBarReducer
   }
