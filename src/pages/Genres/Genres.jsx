@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import FilterBar from './FilterBar/FilterBar'
-import { getComicsByGenre } from '../../apiServices'
 import CardComic from '~/components/CardComic/CardComic'
 import StatusOption from './FilterBar/StatusOption/StatusOption'
 import Pagination from '../../components/Pagination/Pagination'
@@ -8,6 +7,7 @@ import { getGenres } from '../../apiServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchApiGetComics, genresFiltersSlice } from './FilterBar/genresFiltersSlice'
 import scrollToTop from '../../utils/scrollToTop'
+import usePageTitle from '~/hooks/usePageTitle'
 
 function Genres() {
   const dispatch = useDispatch()
@@ -35,6 +35,7 @@ function Genres() {
     // setComicsByGenres(dataComics)
   }, [dispatch, isChanged])
 
+  usePageTitle('Thể loại | UComics')
 
   const handlePrevPage = () => {
     if (pageCurrent === 1) return 0
