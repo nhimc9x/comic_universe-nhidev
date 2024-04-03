@@ -6,7 +6,8 @@ const routes = {
   recent: '/recent',
   completed: '/completed',
   comics: '/comics/:comicId',
-  singleChapter: '/comics/:comicId/chapters/:chapterId'
+  singleChapter: '/comics/:comicId/chapters/:chapterId',
+  notFound: '*'
 }
 
 export default routes

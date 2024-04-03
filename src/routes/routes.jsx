@@ -8,6 +8,7 @@ import Trending from '../pages/MoreComics/Trending/Trending'
 import ComicDetail from '../pages/ComicDetail/ComicDetail'
 import SingleChapter from '../pages/SingleChapter/SingleChapter'
 import SingleChapterLayout from '../layouts/SingleChapterLayout/SingleChapterLayout'
+import PageNotFound from '../pages/PageNotFound/PageNotFound'
 
 export const PUBLIC_ROUTES = [
   { path: routes.home, component: Home },
@@ -20,7 +21,9 @@ export const PUBLIC_ROUTES = [
 
   { path: routes.comics, component: ComicDetail },
 
-  { path: routes.singleChapter, component: SingleChapter, layout: SingleChapterLayout }
+  { path: routes.singleChapter, component: SingleChapter, layout: SingleChapterLayout },
+
+  { path: routes.notFound, component: PageNotFound, layout: null }
 ]
 
 const PRIVATE_ROUTES = []
