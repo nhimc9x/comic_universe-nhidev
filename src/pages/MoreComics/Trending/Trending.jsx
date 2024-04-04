@@ -33,6 +33,10 @@ function Trending() {
       (async () => {
         setLoading(true)
         const result = await getTrendingComics(pageCurrent)
+        if (result.status === 404) {
+          window.location.href = 'NotFound'
+          return
+        }
         dispatch(moreComicsSlice.actions.saveDataCurrent(result))
         dispatch(moreComicsSlice.actions.changePathNameCurrent(location.pathname))
         setTotalPage(result.total_pages)

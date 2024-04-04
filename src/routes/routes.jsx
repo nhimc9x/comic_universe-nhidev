@@ -9,6 +9,7 @@ import ComicDetail from '../pages/ComicDetail/ComicDetail'
 import SingleChapter from '../pages/SingleChapter/SingleChapter'
 import SingleChapterLayout from '../layouts/SingleChapterLayout/SingleChapterLayout'
 import PageNotFound from '../pages/PageNotFound/PageNotFound'
+import ErrorPage from '../pages/ErrorPage/ErrorPage'
 
 export const PUBLIC_ROUTES = [
   { path: routes.home, component: Home },
@@ -23,7 +24,8 @@ export const PUBLIC_ROUTES = [
 
   { path: routes.singleChapter, component: SingleChapter, layout: SingleChapterLayout },
 
-  { path: routes.notFound, component: PageNotFound, layout: null }
+  { path: routes.notFound, component: PageNotFound, layout: null },
+  { path: routes.error, component: ErrorPage, layout: null }
 ]
 
 const PRIVATE_ROUTES = []
