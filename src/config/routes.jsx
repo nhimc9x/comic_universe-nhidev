@@ -7,7 +7,8 @@ const routes = {
   completed: '/completed',
   comics: '/comics/:comicId',
   singleChapter: '/comics/:comicId/chapters/:chapterId',
-  notFound: '*'
+  notFound: '*',
+  error: '/error_page'
 }
 
 export default routes
