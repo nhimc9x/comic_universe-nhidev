@@ -3,6 +3,7 @@ import { IoHeartCircle } from 'react-icons/io5'
 import numberColor from '../../../utils/numberColor'
 import formatNumber from '../../../utils/formatNumber'
 import { NavLink } from 'react-router-dom'
+import compactNumber from '../../../utils/compactNumber'
 
 function TopComicWrap({ comicId, rank, thumbnail, title, chapter, totalViews, followers, genres }) {
   return (
@@ -29,11 +30,11 @@ function TopComicWrap({ comicId, rank, thumbnail, title, chapter, totalViews, fo
           <div className="flex items-center text-base font-semibold gap-2 my-2 text-cmu-primary-500">
             <div className="flex items-center gap-1">
               <IoEye />
-              <div className="">{totalViews}</div>
+              <div className="">{compactNumber(totalViews)}</div>
             </div>
             <div className="flex items-center gap-1">
               <IoHeartCircle />
-              <div className="">{followers}</div>
+              <div className="">{compactNumber(followers)}</div>
             </div>
           </div>
           <div className="flex gap-2 font-bold text-xs text-cmu-primary-500 uppercase flex-wrap row-span-2">

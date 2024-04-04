@@ -13,7 +13,7 @@ export const genresFiltersSlice = createSlice({
   name: 'genresFilters',
   initialState: {
     dataGenres: [],
-    dataComics: null,
+    dataComics: [],
     genreCurrent: null,
     statusCurrent: 'all',
     totalPage: null,

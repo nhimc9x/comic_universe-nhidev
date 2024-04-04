@@ -4,6 +4,7 @@ import TextBox from './TextBox/TextBox'
 import { getComicsDetail, getRecommendComics } from '../../../apiServices'
 import MeteorShower from './MeteorShower/MeteorShower'
 import Intro from './Intro/Intro'
+import { NavLink } from 'react-router-dom'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -77,7 +78,9 @@ function HeroesBaner() {
           recommendComics?.map((data, index) => (
             <SwiperSlide key={index} className='grid items-center'>
               <div className="flex w-full px-10 gap-10">
-                <MagicImage imgUrl={data?.thumbnail} altImg={data?.id} />
+                <NavLink to={`/comics/${data?.id}`}>
+                  <MagicImage imgUrl={data?.thumbnail} altImg={data?.id} />
+                </NavLink>
                 <TextBox title={data?.title} genres={data?.genres} chapter={data?.chapters} rating={data?.average} description={data?.description} />
               </div>
             </SwiperSlide>
