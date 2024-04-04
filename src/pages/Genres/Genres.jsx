@@ -66,7 +66,7 @@ function Genres() {
         <StatusOption option={'ongoing'} statusComic={statusCurrent} title={'Đang tiến hành'} />
       </div>
 
-      {!dataComics ?
+      {!dataComics.length ?
         <div className="h-80 text-xl text-gray-600 dark:text-gray-400 grid place-content-center">Hiện tại chưa tìm thấy truyện tranh nào</div> :
         <>
           <div className="mt-8 grid grid-cols-1 xss:grid-cols-2 sms:grid-cols-3 mdl:grid-cols-4 lg:grid-cols-5 min-[1200px]:grid-cols-6 gap-4">

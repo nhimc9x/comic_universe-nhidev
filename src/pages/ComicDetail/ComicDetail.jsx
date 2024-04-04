@@ -70,12 +70,8 @@ function ComicDetail() {
 
               </div>
               <div className="flex-1 text-gray-100">
-                <div className="text-3xl font-bold">
+                <div className="text-3xl font-bold mb-2 text-shadow">
                   {detailData?.title}
-                </div>
-                <div className="my-1 flex items-center gap-1 text-sm py-0.5 text-yellow-200 px-1 bg-cmu-secondary-500 rounded w-max">
-                  <div className="">{detailData?.average}</div>
-                  <FaStar className='text-xs -translate-y-[1px]' />
                 </div>
                 <div className="grid grid-cols-2 w-max gap-8 text-lg">
                   <div className="">
