@@ -26,6 +26,7 @@ function CompletedComics() {
       setCompletedComics(dataCompletedCommicsSelector)
     }
   }, [dataCompletedCommicsSelector, dispatch])
+
   return (
     <div className="mb-10">
       <SubHead startIcon={<HiBadgeCheck />} to={'/completed?page=1'} title="Đã hoàn thành" />

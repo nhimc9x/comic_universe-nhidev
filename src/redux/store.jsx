@@ -5,6 +5,7 @@ import topReducer from '../pages/Top/topSlice'
 import comicDetailReducer from '../pages/ComicDetail/comicDetailSlice'
 import loadingBarReducer from './slice/loadingBarSlice'
 import moreComicsReducer from '../pages/MoreComics/moreComicsSlice'
+import searchResultReducer from '../pages/SearchResult/searchResultSlice'
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     top: topReducer,
     moreComics: moreComicsReducer,
     comicDetail: comicDetailReducer,
+    searchResult: searchResultReducer,
     loadingBar: loadingBarReducer
   }
 })
