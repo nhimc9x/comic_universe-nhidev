@@ -8,7 +8,6 @@ import { FaChartSimple } from 'react-icons/fa6'
 import { MdRateReview } from 'react-icons/md'
 import { IoHeartCircle } from 'react-icons/io5'
 import { IoEye } from 'react-icons/io5'
-import { FaStar } from 'react-icons/fa6'
 import { ImBook } from 'react-icons/im'
 import Loading from '../../components/Loading/Loading'
 import ListChapter from './ListChapter/ListChapter'
@@ -26,6 +25,7 @@ function ComicDetail() {
   useEffect(() => {
     if (comicId !== dataComicDetail?.id) {
       (async () => {
+        setDetailData()
         setLoading(true)
         const result = await getComicsDetail(comicId)
         dispatch(comicDetailSlice.actions.saveComicDetail(result))

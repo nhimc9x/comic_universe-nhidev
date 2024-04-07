@@ -67,3 +67,8 @@ export const getSingleChapter = async (comicsId, chapterId) => {
   const res = await request.get(`/comics/${comicsId}/chapters/${chapterId}`)
   return res.data
 }
+
+export const findComics = async (query, page) => {
+  const res = await request.get(`/search?q=${query}&page=${page}`)
+  return res.data
+}
