@@ -2,7 +2,7 @@ import './MagicImage.css'
 
 function MagicImage({ imgUrl, altImg }) {
   return (
-    <div className="h-[480px] z-10 image-cover">
+    <div className="w-2/3 mx-auto h-[220px] sms:h-[380px] sms:w-[260px] md:h-[480px] md:w-[340px] sm: z-10 image-cover">
       <div className="spot"></div>
       <div className="spot"></div>
       <div className="spot"></div>

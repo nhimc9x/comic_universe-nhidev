@@ -21,7 +21,7 @@ function ScrollToTop() {
     }
   }
   return (
-    <div className='fixed bottom-14 right-10 z-50'>
+    <div className='fixed bottom-10 sms:bottom-14 right-4 sms:right-10 z-40'>
       <div
         onClick={scrollToTop}
         className={clsx(

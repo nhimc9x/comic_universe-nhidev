@@ -75,10 +75,10 @@ function SearchBar() {
       <FiSearch className='cursor-pointer' onClick={toggleSearchBar} />
       <div
         className={clsx(
-          'fixed top-[70px] shadow-bottom right-0 left-0 bg-cmu-primary-500 h-14 place-content-center animate-slide-bottom',
+          'fixed top-[70px] z-10 shadow-bottom right-0 left-0 bg-cmu-primary-500 h-14 place-content-center animate-slide-bottom',
           showSearchBar ? 'grid' : 'hidden'
         )}>
-        <div className="w-[600px] bg-white h-10 flex items-center">
+        <div className="max-w-[600px] w-[90vw] bg-white h-10 flex items-center">
           <input
             ref={inputRef}
             value={searchValue}

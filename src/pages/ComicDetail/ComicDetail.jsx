@@ -52,8 +52,8 @@ function ComicDetail() {
           <div className="h-[80dvh] dark:bg-[#2f2f2f] bg-[#8f8f8f] grid place-content-center animate-pulse">
             <Loading />
           </div> :
-          <div className="bg-black/50 backdrop-blur-2xl p-20">
-            <div className="flex gap-10">
+          <div className="bg-black/50 backdrop-blur-2xl mdl:px-20 md:px-10 px-6 pt-14 pb-8">
+            <div className="flex gap-10 flex-col md:flex-row">
               <div className="flex flex-col gap-10 items-center">
                 <Book3D thumbnail={detailData?.thumbnail} />
 
@@ -114,12 +114,12 @@ function ComicDetail() {
                     <div className="">{detailData?.total_views}</div>
                   </div>
                 </div>
-                <div className="my-4 flex gap-2 text-cmu-primary-400">
+                <div className="my-4 flex gap-2 flex-wrap text-cmu-primary-400">
                   {detailData?.genres.map(genre => (
                     <div key={genre?.id} className="border border-cmu-primary-400 backdrop-brightness-0 px-3 py-1 text-sm rounded">{genre?.name}</div>
                   ))}
                 </div>
-                <div className="text-lg">
+                <div className="text-lg text-justify">
                   {detailData?.description}
                 </div>
               </div>

@@ -1,10 +1,10 @@
 import CategoryTopComics from './CategoryTopComics/CategoryTopComics'
 
 const categories = [
-  { id: 'all', title: 'Top All' },
-  { id: 'daily', title: 'Top Ngày' },
-  { id: 'weekly', title: 'Top Tuần' },
-  { id: 'monthly', title: 'Top Tháng' }
+  { id: 'all', title: 'All' },
+  { id: 'daily', title: 'Ngày' },
+  { id: 'weekly', title: 'Tuần' },
+  { id: 'monthly', title: 'Tháng' }
 ]
 
 function renderCategoryTopComics() {
