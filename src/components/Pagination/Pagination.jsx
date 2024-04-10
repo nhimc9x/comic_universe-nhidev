@@ -1,9 +1,10 @@
 import PageNumber from './PageNumber/PageNumber'
+import useMedia from 'use-media'
 
 const Pagination = ({ totalPage, pageCurrent, handlePrevPage, handleNextPage, handleChangePage }) => {
+  const isSmallScreen = useMedia({ maxWidth: 460 })
   const pageNumbers = []
-
-  const maxVisiblePages = 5
+  const maxVisiblePages = isSmallScreen ? 3 : 5
 
   if (totalPage >= maxVisiblePages) {
     let startPage = Math.max(1, pageCurrent - Math.floor(maxVisiblePages / 2))
@@ -23,7 +24,7 @@ const Pagination = ({ totalPage, pageCurrent, handlePrevPage, handleNextPage, ha
 
   return (
     <div className="mx-auto">
-      <div className="mt-10 dark:text-gray-300 w-[520px] mx-auto bg-cmu-secondary-100 dark:bg-cmu-secondary-900 h-14 rounded-full flex items-center justify-between px-6 text-lg font-semibold tracking-widest">
+      <div className="mt-10 dark:text-gray-300 w-full sms:w-[520px] mx-auto bg-cmu-secondary-100 dark:bg-cmu-secondary-900 h-14 rounded-full flex items-center justify-between px-6 text-lg font-semibold tracking-widest">
         <div className="cursor-pointer" onClick={handlePrevPage}>{'<Prev'}</div>
         <div className="flex gap-3">
           {pageNumbers?.map(number => (

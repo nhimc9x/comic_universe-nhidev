@@ -31,10 +31,10 @@ function Top() {
   }, [dispatch, type, isChanged])
 
   return (
-    <div className="px-4">
+    <div className="px-0 sm:px-4">
       <div className='border-x-2 border-b-2 border-[#e5e7eb] dark:border-[#262626]'>
         {renderCategoryTopComics()}
-        <div className="px-4 py-8 grid grid-cols-1 lg:grid-cols-2">
+        <div className="px-2 py-4 sms:px-4 grid grid-cols-1 mdl:grid-cols-2">
           {
             loading ?
               <SkeletonTopComic count={quantity} /> :
@@ -48,7 +48,7 @@ function Top() {
                   chapter={comic?.last_chapter?.name}
                   totalViews={comic.total_views}
                   followers={comic.followers}
-                  genres={comic.genres.slice(0, 3)}
+                  updatedAt={comic.updated_at}
                 />)
           }
         </div>

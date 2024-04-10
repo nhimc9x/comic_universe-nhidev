@@ -17,9 +17,9 @@ function SearchResultItem({ handleCLickLink, comicId, thumbnail, title, last_cha
       />
       <div className="space-y-1.5" >
         <div className="text-xl font-bold line-clamp-1">{title}</div>
-        <div className="text-base bg-cmu-primary-500 rounded w-max text-white px-2 py-0.5">{last_chapter}</div>
-        <div className="text-base text-black dark:text-gray-300 font-semibold">Trạng thái: {status}</div>
-        <div className="text-base text-black dark:text-gray-300 font-semibold">Cập nhật: {updated_at}</div>
+        <div className="text-base line-clamp-1 bg-cmu-primary-500 rounded w-max text-white px-2 py-0.5">{last_chapter}</div>
+        <div className="text-base line-clamp-1 text-black dark:text-gray-300 font-semibold">Trạng thái: {status}</div>
+        <div className="text-base line-clamp-1 text-black dark:text-gray-300 font-semibold">Cập nhật: {updated_at}</div>
       </div>
     </div>
   )

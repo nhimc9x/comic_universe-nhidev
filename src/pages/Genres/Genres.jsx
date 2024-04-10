@@ -60,7 +60,7 @@ function Genres() {
   return (
     <div className='mb-10 min-h-[80vh]'>
       <FilterBar />
-      <div className="flex items-center gap-4 justify-center font-medium text-cmu-primary-500">
+      <div className="flex items-center gap-4 justify-center flex-wrap font-medium text-cmu-primary-500">
         <StatusOption option={'all'} statusComic={statusCurrent} title={'Tất cả'} />
         <StatusOption option={'completed'} statusComic={statusCurrent} title={'Hoàn thành'} />
         <StatusOption option={'ongoing'} statusComic={statusCurrent} title={'Đang tiến hành'} />

@@ -60,7 +60,7 @@ function HeroesBaner() {
           clickable: true
         }}
         modules={[Parallax, Pagination, Autoplay]}
-        className="w-full h-full bg-black text-white p-10"
+        className="w-full h-full bg-black text-white p-0 mdl:p-10"
       >
         <div
           slot="container-start"
@@ -77,7 +77,7 @@ function HeroesBaner() {
         {loading ? <Intro /> :
           recommendComics?.map((data, index) => (
             <SwiperSlide key={index} className='grid items-center'>
-              <div className="flex w-full px-10 gap-10">
+              <div className="flex h-full w-full flex-col sms:h-max sms:flex-row pt-4 pb-10 sms:py-0 px-10 gap-4 mdl:gap-10">
                 <NavLink to={`/comics/${data?.id}`}>
                   <MagicImage imgUrl={data?.thumbnail} altImg={data?.id} />
                 </NavLink>

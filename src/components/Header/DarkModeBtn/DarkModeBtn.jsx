@@ -14,7 +14,8 @@ function DarkModeBtn() {
     setDarkSide(!darkSide)
   }
   return (
-    <div onClick={toggleDarkMode}>
+    <div className='flex items-center justify-center group' onClick={toggleDarkMode}>
+      <div className="text-xl cursor-pointer py-2 font-semibold md:hidden block mr-4 group-hover:mr-10 duration-300">Chế độ ban đêm</div>
       <VscColorMode className={clsx('transition-all duration-300 cursor-pointer', darkSide && 'rotate-180')} />
     </div>
   )
