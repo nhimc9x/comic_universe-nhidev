@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getSingleChapter } from '../../apiServices'
+import { getSingleChapter } from '~/apiServices'
 import HeaderBar from './HeaderBar/HeaderBar'
 import clsx from 'clsx'
-import Loading from '../../components/Loading/Loading'
-import ScrollToTop from '../../components/ScrollToTop/ScrollToTop'
+import Loading from '~/components/Loading/Loading'
+import ScrollToTop from '~/components/ScrollToTop/ScrollToTop'
 import usePageTitle from '~/hooks/usePageTitle'
 
 function SingleChapter() {

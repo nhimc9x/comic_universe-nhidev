@@ -6,6 +6,7 @@ export const request = axios.create({
   timeout: 8000
 })
 
+// Sử dụng Apis V2
 // export const requestV2 = axios.create({
 //   baseURL: 'https://comics-api.vercel.app/v2'
 // })

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import TopComicWrap from './TopComicWrap/TopComicWrap'
-import { getAllTopComics, getTopComics } from '../../apiServices'
+import { getAllTopComics, getTopComics } from '~/apiServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { topSlice } from './topSlice'
 import SkeletonTopComic from './SkeletonTopComics/SkeletonTopComics'

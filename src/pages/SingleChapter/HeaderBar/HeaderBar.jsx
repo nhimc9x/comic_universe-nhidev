@@ -4,7 +4,7 @@ import { FaChevronLeft } from 'react-icons/fa'
 import SelectMenu from './SelectMenu/SelectMenu'
 import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import findChapterBothSides from '../../../utils/findChapterBothSides'
+import findChapterBothSides from '~/utils/findChapterBothSides'
 import clsx from 'clsx'
 import NavigationBtn from './NavigationBtn/NavigationBtn'
 

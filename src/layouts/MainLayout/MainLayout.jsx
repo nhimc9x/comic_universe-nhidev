@@ -1,7 +1,7 @@
-import Footer from '../../components/Footer/Footer'
-import Header from '../../components/Header/Header'
-import LoadingBar from '../../components/LoadingBar/LoadingBar'
-import ScrollToTop from '../../components/ScrollToTop/ScrollToTop'
+import Footer from '~/components/Footer/Footer'
+import Header from '~/components/Header/Header'
+import LoadingBar from '~/components/LoadingBar/LoadingBar'
+import ScrollToTop from '~/components/ScrollToTop/ScrollToTop'
 
 function MainLayout({ children }) {
   return (

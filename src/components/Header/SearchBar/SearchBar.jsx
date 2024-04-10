@@ -1,13 +1,13 @@
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
-import { findComics } from '../../../apiServices'
+import { findComics } from '~/apiServices'
 import SearchResultItem from './SearchResultItem/SearchResultItem'
 import loadingSearch from '~/assets/search_loading.gif'
 import { LuSearchX } from 'react-icons/lu'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { searchResultSlice } from '../../../pages/SearchResult/searchResultSlice'
+import { searchResultSlice } from '~/pages/SearchResult/searchResultSlice'
 
 function SearchBar() {
   const inputRef = useRef(null)

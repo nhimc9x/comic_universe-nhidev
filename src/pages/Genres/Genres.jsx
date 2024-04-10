@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 import FilterBar from './FilterBar/FilterBar'
 import CardComic from '~/components/CardComic/CardComic'
 import StatusOption from './FilterBar/StatusOption/StatusOption'
-import Pagination from '../../components/Pagination/Pagination'
-import { getGenres } from '../../apiServices'
+import Pagination from '~/components/Pagination/Pagination'
+import { getGenres } from '~/apiServices'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchApiGetComics, genresFiltersSlice } from './FilterBar/genresFiltersSlice'
-import scrollToTop from '../../utils/scrollToTop'
+import scrollToTop from '~/utils/scrollToTop'
 import usePageTitle from '~/hooks/usePageTitle'
 
 function Genres() {
@@ -32,7 +32,6 @@ function Genres() {
     if (!isChanged) {
       dispatch(fetchApiGetComics({ genre: genreCurrent?.id, page: pageCurrent, status: statusCurrent }))
     }
-    // setComicsByGenres(dataComics)
   }, [dispatch, isChanged])
 
   usePageTitle('Thể loại | UComics')
@@ -53,9 +52,6 @@ function Genres() {
     dispatch(genresFiltersSlice.actions.changePageCurrent(num))
     scrollToTop()
   }
-
-  // console.log(dataComics)
-  // console.log(loading)
 
   return (
     <div className='mb-10 min-h-[80vh]'>

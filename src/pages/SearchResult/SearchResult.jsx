@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import SkeletonCardComicPro from '../../components/CardComicPro/SkeletonCardComicPro/SkeletonCardComicPro'
+import SkeletonCardComicPro from '~/components/CardComicPro/SkeletonCardComicPro/SkeletonCardComicPro'
 import CardComicPro from '~/components/CardComicPro/CardComicPro'
-import { findComics } from '../../apiServices'
+import { findComics } from '~/apiServices'
 import { searchResultSlice } from './searchResultSlice'
 import { LuSearchX } from 'react-icons/lu'
-import scrollToTop from '../../utils/scrollToTop'
-import Pagination from '../../components/Pagination/Pagination'
+import scrollToTop from '~/utils/scrollToTop'
+import Pagination from '~/components/Pagination/Pagination'
 
 function SearchResult() {
   const location = useLocation()

@@ -6,7 +6,7 @@
 
 * {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; /* Safari, Chrome, UC Browser */
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {

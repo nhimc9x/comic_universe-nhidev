@@ -1,9 +1,9 @@
 import { IoEye } from 'react-icons/io5'
 import { IoHeartCircle } from 'react-icons/io5'
-import numberColor from '../../../utils/numberColor'
-import formatNumber from '../../../utils/formatNumber'
+import numberColor from '~/utils/numberColor'
+import formatNumber from '~/utils/formatNumber'
 import { NavLink } from 'react-router-dom'
-import compactNumber from '../../../utils/compactNumber'
+import compactNumber from '~/utils/compactNumber'
 
 function TopComicWrap({ comicId, rank, thumbnail, title, chapter, totalViews, followers, updatedAt }) {
   return (
