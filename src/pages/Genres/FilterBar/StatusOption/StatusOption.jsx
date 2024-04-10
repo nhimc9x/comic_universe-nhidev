@@ -23,3 +23,4 @@ function StatusOption({ title, statusComic, option }) {
 }
 
 export default StatusOption
+

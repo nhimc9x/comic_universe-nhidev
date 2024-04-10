@@ -2,20 +2,7 @@ import { HiOutlineSelector } from 'react-icons/hi'
 import clsx from 'clsx'
 import { useRef, useState, useEffect } from 'react'
 import SelectItem from './SelectItem/SelectItem'
-import { useDispatch, useSelector } from 'react-redux'
-
-let mockdata = [
-  { id: 1, name: 'Chapter 1' },
-  { id: 2, name: 'Chapter 2' },
-  { id: 3, name: 'Chapter 3' },
-  { id: 4, name: 'Chapter 4' },
-  { id: 5, name: 'Chapter 5' },
-  { id: 6, name: 'Chapter 6' },
-  { id: 7, name: 'Chapter 7' },
-  { id: 8, name: 'Chapter 8' },
-  { id: 9, name: 'Chapter 9' },
-  { id: 10, name: 'Chapter 10' }
-]
+import { useSelector } from 'react-redux'
 
 function SelectMenu() {
   const dataSingleChapter = useSelector(state => state.singleChapter.dataSingleChapter)
@@ -43,8 +30,6 @@ function SelectMenu() {
       document.removeEventListener('click', handleDocumentClick)
     }
   }, [])
-
-  console.log('1', currentValue)
 
   return (
     <div

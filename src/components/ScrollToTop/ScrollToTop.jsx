@@ -1,5 +1,5 @@
 import { IoMdRocket } from 'react-icons/io'
-import scrollToTop from '../../utils/scrollToTop'
+import scrollToTop from '~/utils/scrollToTop'
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 

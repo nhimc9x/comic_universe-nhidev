@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import MagicImage from './MagicImage/MagicImage'
 import TextBox from './TextBox/TextBox'
-import { getComicsDetail, getRecommendComics } from '../../../apiServices'
+import { getComicsDetail, getRecommendComics } from '~/apiServices'
 import MeteorShower from './MeteorShower/MeteorShower'
 import Intro from './Intro/Intro'
 import { NavLink } from 'react-router-dom'

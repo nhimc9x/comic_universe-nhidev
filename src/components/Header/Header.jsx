@@ -1,9 +1,7 @@
-import cmuComics from '../../assets/cmu_logo.png'
+import cmuComics from '~/assets/cmu_logo.png'
 import NavBar from './NavBar/NavBar'
 import DarkModeBtn from './DarkModeBtn/DarkModeBtn'
-import { LuHistory } from 'react-icons/lu'
 import SearchBar from './SearchBar/SearchBar'
-import { HiMenu } from 'react-icons/hi'
 import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { useLocation } from 'react-router-dom'
@@ -41,7 +39,6 @@ function Header() {
         <div className="hidden md:flex justify-between items-center flex-1 ml-12">
           <NavBar />
           <div className="flex items-center text-3xl text-cmu-primary-500 gap-4">
-            <LuHistory />
             <DarkModeBtn />
             <SearchBar />
           </div>
@@ -76,10 +73,6 @@ function Header() {
                 <NavBar />
               </div>
               <DarkModeBtn />
-              <div className="mt-2 cursor-pointer flex flex-col items-center justify-center group">
-                <div className="text-xl font-semibold md:hidden block py-2">Lịch sử đọc</div>
-                <LuHistory className='group-hover:-rotate-[360deg] text-3xl duration-500 ease-in-out' />
-              </div>
             </div>
           </div>
         </div>

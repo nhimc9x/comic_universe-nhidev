@@ -20,10 +20,6 @@ export default {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
       },
       colors: {
-        // 'cmu-primary-200': '#ee4e34',
-        // 'cmu-primary-400': '#dc3f26',
-        // 'cmu-primary-600': '#b9321c',
-        // 'cmu-secondary': '#fcedda',
         'cmu-primary': {
           '50': '#fef4f2',
           '100': '#fee6e2',
@@ -125,18 +121,9 @@ export default {
           to: {
             transform: 'scale(1)'
           }
-        },
-        // 'scale-up-center': {
-        //   '0%': {
-        //     transform: 'scale(.3)'
-        //   },
-        //   to: {
-        //     transform: 'scale(1)'
-        //   }
-        // }
+        }
       }
     }
   },
   plugins: []
 }
-

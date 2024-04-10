@@ -12,3 +12,4 @@ export default function useDarkSide() {
 
   return [colorTheme, setTheme, theme]
 }
+

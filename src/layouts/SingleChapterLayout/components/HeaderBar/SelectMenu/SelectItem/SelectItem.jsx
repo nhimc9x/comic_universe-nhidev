@@ -1,15 +1,8 @@
 import clsx from 'clsx'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-
-function SelectItem({ chapterId, value }) {
+function SelectItem({ value }) {
   const dataSingleChapter = useSelector(state => state.singleChapter.dataSingleChapter)
-
-  const navigate = useNavigate()
-  // const changeChapter = () => {
-  //   navigate(``/comics/${comicId}/chapters/${chapterId}``)
-  // }
 
   return (
     <div

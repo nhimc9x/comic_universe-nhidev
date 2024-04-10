@@ -32,3 +32,4 @@ function ListChapter({ comicId, listChapter }) {
 }
 
 export default ListChapter
+

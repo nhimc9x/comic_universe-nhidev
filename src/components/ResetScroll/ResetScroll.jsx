@@ -7,3 +7,4 @@ export default function ResetScroll() {
     window.scrollTo(0, 0)
   }, [pathname])
 }
+

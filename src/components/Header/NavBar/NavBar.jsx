@@ -1,5 +1,5 @@
 import MenuItem from './MenuItem/MenuItem'
-import routes from '../../../config/routes'
+import routes from '~/config/routes'
 
 function NavBar() {
   return (

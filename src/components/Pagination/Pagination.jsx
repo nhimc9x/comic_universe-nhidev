@@ -38,3 +38,4 @@ const Pagination = ({ totalPage, pageCurrent, handlePrevPage, handleNextPage, ha
 }
 
 export default Pagination
+

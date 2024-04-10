@@ -1,5 +1,5 @@
 import { VscColorMode } from 'react-icons/vsc'
-import useDarkSide from '../../../hooks/useDarkSide'
+import useDarkSide from '~/hooks/useDarkSide'
 import { useState } from 'react'
 import clsx from 'clsx'
 

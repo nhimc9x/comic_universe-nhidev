@@ -15,3 +15,4 @@ function MagicImage({ imgUrl, altImg }) {
 }
 
 export default MagicImage
+

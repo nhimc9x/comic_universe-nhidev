@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { getComicsByGenre } from '../../../apiServices'
+import { getComicsByGenre } from '~/apiServices'
 
 export const fetchApiGetComics = createAsyncThunk(
   'genresFilters/fetchApiGetComics',

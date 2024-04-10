@@ -1,5 +1,5 @@
 import bgTitle from '~/assets/bg_text_title.jpg'
-import Loading from '../../../../components/Loading/Loading'
+import Loading from '~/components/Loading/Loading'
 
 function Intro() {
   return (
