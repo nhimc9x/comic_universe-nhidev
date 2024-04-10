@@ -6,7 +6,7 @@
   "author": "NhiDeveloper",
   "description": "Dự án Website truyện tranh",
   "engines": {
-    "node": "18.18.2"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "vite",
