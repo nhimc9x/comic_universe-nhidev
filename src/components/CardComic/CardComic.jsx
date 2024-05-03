@@ -4,13 +4,13 @@ import placeholderImg from '~/assets/img_placeholder.jpg'
 
 function CardComic({ comicId, loading, thumbnail, altImg, lastChapter, title }) {
   if (loading) return (
-    <div className="h-[280px] rounded-md">
+    <div className="h-[280px] w-[260px] mx-auto xss:mx-0 xss:w-auto rounded-md">
       <SkeletonCustom />
     </div>
   )
   return (
     <NavLink to={`/comics/${comicId}`}>
-      <div className="h-[280px] overflow-hidden relative rounded group">
+      <div className="h-[280px] max-w-[260px] mx-auto overflow-hidden relative rounded group">
         <div className='w-full h-full group-hover:scale-105 duration-300 transition-transform origin-bottom'>
           <img
             className='w-full h-full object-cover'

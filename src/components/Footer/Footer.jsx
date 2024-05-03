@@ -14,10 +14,10 @@ function Footer() {
         <a href='https://github.com/nhimc9x' className="dark:bg-gray-800 rounded bg-slate-500 hover:-translate-y-1 duration-300 hover:text-cmu-primary-600 dark:hover:text-cmu-primary-400 size-11 grid place-content-center">
           <LuGithub />
         </a>
-        <a href='' className="dark:bg-gray-800 rounded bg-slate-500 hover:-translate-y-1 duration-300 hover:text-cmu-primary-600 dark:hover:text-cmu-primary-400 size-11 grid place-content-center">
+        <a href="mailto:nhicomputer77@gmail.com" className="dark:bg-gray-800 rounded bg-slate-500 hover:-translate-y-1 duration-300 hover:text-cmu-primary-600 dark:hover:text-cmu-primary-400 size-11 grid place-content-center">
           <HiOutlineMail />
         </a>
-        <a href='' className="dark:bg-gray-800 rounded bg-slate-500 hover:-translate-y-1 duration-300 hover:text-cmu-primary-600 dark:hover:text-cmu-primary-400 size-11 grid place-content-center">
+        <a href='https://nhideveloper.id.vn' className="dark:bg-gray-800 rounded bg-slate-500 hover:-translate-y-1 duration-300 hover:text-cmu-primary-600 dark:hover:text-cmu-primary-400 size-11 grid place-content-center">
           <IoPersonOutline />
         </a>
       </div>
