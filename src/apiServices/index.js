@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { request } from '../utils/request'
+import { request } from '~/utils/request'
 
 export const getTrendingComics = async (page) => {
   const res = await request.get(`/trending-comics?page=${page}`)
