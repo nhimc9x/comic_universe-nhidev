@@ -6,7 +6,7 @@ function SkeletonCustom() {
   const theme = localStorage.theme
 
   return (
-    <div className='h-full'>
+    <div className='h-full w-full'>
       <Skeleton baseColor={theme === 'dark' ? '#202020' : ''} highlightColor={theme === 'dark' ? '#333' : ''} height={'100%'} />
     </div>
   )
