@@ -7,16 +7,17 @@
 
 <br/>
 
-## Decription
-
-This is a comic reading website.
-
-<br/>
 
 <h3 align="center">
     🔹
     <a href="https://comic-universe-nhidev.vercel.app/">Demo</a>
 </h3>
+
+<br/>
+
+## Decription
+
+This is a comic reading website that I created during the process of learning to call APIs and using Redux.
 
 
 ## Built With
@@ -50,4 +51,4 @@ This project was built using these technologies.
 
 ## Other
 
-Source API: <a href="https://comics-api.vercel.app/">[Demo](https://comics-api.vercel.app)</a> by pth-1641.
+Source API: <a href="https://comics-api.vercel.app/">https://comics-api.vercel.app</a> by pth-1641.
