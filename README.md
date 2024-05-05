@@ -10,9 +10,6 @@
     <a href="https://comic-universe-nhidev.vercel.app/">Demo</a>
 </h2>
 
-<br/>
-<br/>
-
 ## Decription
 
 This is a comic reading website that I created during the process of learning to call APIs and using Redux.
