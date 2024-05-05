@@ -8,10 +8,10 @@
 <br/>
 
 
-<h3 align="center">
+<h2 align="center">
     🔹
     <a href="https://comic-universe-nhidev.vercel.app/">Demo</a>
-</h3>
+</h2>
 
 <br/>
 
