@@ -5,14 +5,12 @@
   <img alt="Demo" src="./screen_shot/ucomics_screen_shot.png" />
 </div>
 
-<br/>
-
-
 <h2 align="center">
     🔹
     <a href="https://comic-universe-nhidev.vercel.app/">Demo</a>
 </h2>
 
+<br/>
 <br/>
 
 ## Decription
