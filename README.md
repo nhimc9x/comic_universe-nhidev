@@ -1,54 +1,8 @@
-<h2 align="center">
-  UComics - <a href="https://nhideveloper.id.vn" target="_blank">Nhideveloper</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./screen_shot/ucomics_screen_shot.png" />
-</div>
+# React + Vite
 
-<br/>
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-<h3 align="center">
-    🔹
-    <a href="https://comic-universe-nhidev.vercel.app/">Demo</a>
-</h3>
-
-<br/>
-
-## Decription
-
-This is a comic reading website that I created during the process of learning to call APIs and using Redux.
-
-
-## Built With
-
-This project was built using these technologies.
-
-- Vite
-- React.js
-- TailwindCSS
-- CSS3
-- Swiper
-- Axios
-- Redux toolkit
-- Rest Apis
-- VsCode
-- Vercel
-
-## Feature
-
-**🌗 Dark Mode**
-
-**📚 Filter Comics**
-
-**🔎 Search Comics**
-
-**️🏅 Ranking Comics**
-
-**🖼️ 3D Effect**
-
-**📱 Fully Responsive**
-
-## Other
-
-Source API: <a href="https://comics-api.vercel.app/">https://comics-api.vercel.app</a> by pth-1641.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
